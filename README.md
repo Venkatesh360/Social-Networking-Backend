@@ -4,9 +4,6 @@ This project contains API routes for discussions, comments, friends, and replies
 
 [Postman Collection](https://www.postman.com/science-participant-84749/workspace/assesmentv2/request/36295893-de6966ac-39b5-44a1-9030-4d04d10fae33?action=share&source=copy-link&creator=36295893&ctx=documentation).
 
-# Venkatesh Kashyap Assessment Project
-
-This project contains API routes for discussions, comments, friends, and replies.
 
 ## Discussion Routes
 
