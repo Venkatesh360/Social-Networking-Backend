@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Venkatesh Kashyap Assessment Project
 
-## Getting Started
+This project contains API routes for discussions, comments, friends, and replies.
 
-First, run the development server:
+[Postman Collection](https://www.postman.com/science-participant-84749/workspace/assesmentv2/request/36295893-de6966ac-39b5-44a1-9030-4d04d10fae33?action=share&source=copy-link&creator=36295893&ctx=documentation).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Venkatesh Kashyap Assessment Project
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This project contains API routes for discussions, comments, friends, and replies.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Discussion Routes
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Create Discussion
 
-## Learn More
+- **Path:** `api/discussion/createDiscussion`
+- **Method:** POST
+- **Body:** `text`, `imageUrl`, `hashtag`, `userId`, `username`
 
-To learn more about Next.js, take a look at the following resources:
+### Delete Discussion
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Path:** `api/discussion/deleteDiscussion`
+- **Method:** PUT
+- **Body:** `userId`, `postId`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Get Discussion
 
-## Deploy on Vercel
+- **Path:** `api/discussion/getDiscussion`
+- **Method:** GET
+- **Search Params:** `keywords`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Update Discussion
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Path:** `api/discussion/updateDiscussion`
+- **Method:** PUT
+- **Body:** `userId`, `postId`, `newText`
+
+### Update Discussion Likes
+
+- **Path:** `api/discussion/updateDiscussionLikes`
+- **Method:** PUT
+- **Body:** `postId`
+
+## Comments Routes
+
+### Add Comment
+
+- **Path:** `api/comments/addComments`
+- **Method:** POST
+- **Body:** `userId`, `username`, `postId`, `commentText`
+
+### Delete Comment
+
+- **Path:** `api/comments/deleteComment`
+- **Method:** PUT
+- **Body:** `userId`, `postId`, `commentId`
+
+### Get Comments
+
+- **Path:** `api/comments/getComments`
+- **Method:** GET
+- **Search Params:** `postId`
+
+### Update Comment
+
+- **Path:** `api/comments/updateComment`
+- **Method:** PUT
+- **Body:** `userId`, `postId`, `commentId`, `newText`
+
+### Update Comment Likes
+
+- **Path:** `api/comments/updateLikes`
+- **Method:** PUT
+- **Body:** `postId`, `commentId`
+
+## Friends Routes
+
+### Add Friend
+
+- **Path:** `api/friends/addFriend`
+- **Method:** PUT
+- **Body:** `userId`, `username`, `currentUserId`
+
+### Search Friend
+
+- **Path:** `api/friends/searchFriend`
+- **Method:** GET
+- **Search Params:** `username`
+
+## Replies Routes
+
+### Add Reply
+
+- **Path:** `api/replies/addReply`
+- **Method:** POST
+- **Body:** `postId`, `commentId`, `replyText`, `userId`, `username`
+
+### Get Replies
+
+- **Path:** `api/replies/getReplies`
+- **Method:** GET
+- **Search Params:** `postId`
